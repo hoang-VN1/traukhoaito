@@ -5057,85 +5057,52 @@ local aa = {
         end
         return af
     end,
- [48] = function()
+[48] = function()
     local aa, ab, ac, ad, ae = b(48)
-
-    local RunService = game:GetService("RunService")
-    local t = 0
-
-    -- Màu xanh biển đậm hơn
-    local gradientColors = {
-        Color3.fromRGB(0, 40, 80),     -- Xanh navy đậm
-        Color3.fromRGB(0, 60, 120),    -- Xanh biển đậm
-        Color3.fromRGB(0, 80, 140),    -- Xanh biển trung bình
-        Color3.fromRGB(10, 100, 160),  -- Xanh biển nhạt hơn một chút
-        Color3.fromRGB(0, 70, 130)     -- Xanh lam đậm
-    }
-
-    local function lerpColor(c1, c2, alpha)
-        return Color3.new(
-            c1.R + (c2.R - c1.R) * alpha,
-            c1.G + (c2.G - c1.G) * alpha,
-            c1.B + (c2.B - c1.B) * alpha
-        )
-    end
-
-    -- Gradient động chuyển màu liên tục
-    RunService.RenderStepped:Connect(function(dt)
-        t = t + dt
-        local i = math.floor(t) % #gradientColors + 1
-        local nextIndex = (i % #gradientColors) + 1
-        local alpha = t % 1
-
-        ae.AcrylicGradient = ColorSequence.new(
-            lerpColor(gradientColors[i], gradientColors[nextIndex], alpha),
-            lerpColor(gradientColors[nextIndex], gradientColors[i], alpha)
-        )
-    end)
-
+    
     return {
-        Name               = "Trauroblox",
-        Accent             = Color3.fromRGB(0, 120, 180),      -- Xanh biển đậm hơn
-        TitleBarLine       = Color3.fromRGB(0, 90, 150),       -- Đậm hơn
-        AcrylicBorder      = Color3.fromRGB(0, 140, 200),      -- Đậm hơn
-        Text               = Color3.fromRGB(230, 250, 255),
-
-        AcrylicMain        = Color3.fromRGB(5, 20, 35),        -- Nền đậm hơn
-        AcrylicGradient    = ColorSequence.new(Color3.fromRGB(0, 40, 80), Color3.fromRGB(0, 80, 140)),
-        AcrylicNoise       = 0.85,
-
-        Tab                = Color3.fromRGB(8, 25, 45),        -- Đậm hơn
-        Element            = Color3.fromRGB(6, 20, 35),        -- Đậm hơn
-        ElementBorder      = Color3.fromRGB(0, 120, 180),      -- Đậm hơn
-        InElementBorder    = Color3.fromRGB(0, 140, 200),      -- Đậm hơn
-        ElementTransparency= 0.85,
-
-        ToggleSlider       = Color3.fromRGB(60, 100, 140),     -- Đậm hơn
-        ToggleToggled      = Color3.fromRGB(0, 120, 180),      -- Đậm hơn
-        SliderRail         = Color3.fromRGB(0, 80, 140),       -- Đậm hơn
-
-        DropdownFrame      = Color3.fromRGB(8, 25, 45),        -- Đậm hơn
-        DropdownHolder     = Color3.fromRGB(6, 20, 35),        -- Đậm hơn
-        DropdownBorder     = Color3.fromRGB(0, 120, 180),      -- Đậm hơn
-        DropdownOption     = Color3.fromRGB(0, 140, 200),      -- Đậm hơn
-
-        Keybind            = Color3.fromRGB(0, 120, 180),      -- Đậm hơn
-        Input              = Color3.fromRGB(0, 80, 140),       -- Đậm hơn
-        InputFocused       = Color3.fromRGB(12, 30, 50),       -- Đậm hơn
-        InputIndicator     = Color3.fromRGB(0, 140, 200),      -- Đậm hơn
-
-        Dialog             = Color3.fromRGB(8, 25, 45),        -- Đậm hơn
-        DialogHolder       = Color3.fromRGB(6, 20, 35),        -- Đậm hơn
-        DialogHolderLine   = Color3.fromRGB(5, 15, 30),        -- Đậm hơn
-        DialogButton       = Color3.fromRGB(0, 120, 180),      -- Đậm hơn
-        DialogButtonBorder = Color3.fromRGB(0, 140, 200),      -- Đậm hơn
-        DialogBorder       = Color3.fromRGB(0, 80, 140),       -- Đậm hơn
-        DialogInput        = Color3.fromRGB(6, 20, 35),        -- Đậm hơn
-        DialogInputLine    = Color3.fromRGB(0, 120, 180),      -- Đậm hơn
-
-        SubText            = Color3.fromRGB(180, 220, 240),    -- Nhạt hơn để contrast
-        Hover              = Color3.fromRGB(0, 140, 200),      -- Đậm hơn
-        HoverChange        = 0.1,
+        Name = "Trauroblox",
+        Accent = Color3.fromRGB(0, 120, 180),
+        TitleBarLine = Color3.fromRGB(0, 90, 150),
+        AcrylicBorder = Color3.fromRGB(0, 140, 200),
+        Text = Color3.fromRGB(230, 250, 255),
+        
+        AcrylicMain = Color3.fromRGB(5, 20, 35),
+        AcrylicGradient = ColorSequence.new(Color3.fromRGB(0, 40, 80), Color3.fromRGB(0, 80, 140)),
+        AcrylicNoise = 0.85,
+        
+        Tab = Color3.fromRGB(8, 25, 45),
+        Element = Color3.fromRGB(6, 20, 35),
+        ElementBorder = Color3.fromRGB(0, 120, 180),
+        InElementBorder = Color3.fromRGB(0, 140, 200),
+        ElementTransparency = 0.85,
+        
+        ToggleSlider = Color3.fromRGB(60, 100, 140),
+        ToggleToggled = Color3.fromRGB(0, 120, 180),
+        SliderRail = Color3.fromRGB(0, 80, 140),
+        
+        DropdownFrame = Color3.fromRGB(8, 25, 45),
+        DropdownHolder = Color3.fromRGB(6, 20, 35),
+        DropdownBorder = Color3.fromRGB(0, 120, 180),
+        DropdownOption = Color3.fromRGB(0, 140, 200),
+        
+        Keybind = Color3.fromRGB(0, 120, 180),
+        Input = Color3.fromRGB(0, 80, 140),
+        InputFocused = Color3.fromRGB(12, 30, 50),
+        InputIndicator = Color3.fromRGB(0, 140, 200),
+        
+        Dialog = Color3.fromRGB(8, 25, 45),
+        DialogHolder = Color3.fromRGB(6, 20, 35),
+        DialogHolderLine = Color3.fromRGB(5, 15, 30),
+        DialogButton = Color3.fromRGB(0, 120, 180),
+        DialogButtonBorder = Color3.fromRGB(0, 140, 200),
+        DialogBorder = Color3.fromRGB(0, 80, 140),
+        DialogInput = Color3.fromRGB(6, 20, 35),
+        DialogInputLine = Color3.fromRGB(0, 120, 180),
+        
+        SubText = Color3.fromRGB(180, 220, 240),
+        Hover = Color3.fromRGB(0, 140, 200),
+        HoverChange = 0.1,
     }
 end
 do

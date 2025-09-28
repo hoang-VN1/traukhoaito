@@ -5063,13 +5063,13 @@ local aa = {
     local RunService = game:GetService("RunService")
     local t = 0
 
-    -- Màu đỏ gradient
+    -- Màu xanh biển sâu + xanh ngọc
     local gradientColors = {
-        Color3.fromRGB(128, 0, 0),    -- Đỏ đậm
-        Color3.fromRGB(204, 0, 0),    -- Đỏ tươi
-        Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
-        Color3.fromRGB(192, 0, 0)     -- Đỏ trung
+        Color3.fromRGB(0, 64, 128),    -- Xanh biển sâu
+        Color3.fromRGB(0, 102, 204),   -- Xanh đại dương
+        Color3.fromRGB(0, 178, 255),   -- Xanh nước biển tươi
+        Color3.fromRGB(0, 255, 220),   -- Xanh ngọc sáng
+        Color3.fromRGB(0, 128, 192)    -- Xanh lam đậm
     }
 
     local function lerpColor(c1, c2, alpha)
@@ -5095,46 +5095,46 @@ local aa = {
 
     return {
         Name               = "TuanAnhIOS",
-        Accent             = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        TitleBarLine       = Color3.fromRGB(192, 0, 0),    -- Đỏ trung
-        AcrylicBorder      = Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
-        Text               = Color3.fromRGB(255, 230, 230),-- Trắng phớt đỏ
+        Accent             = Color3.fromRGB(0, 178, 255),
+        TitleBarLine       = Color3.fromRGB(0, 128, 192),
+        AcrylicBorder      = Color3.fromRGB(0, 255, 220),
+        Text               = Color3.fromRGB(230, 250, 255),
 
-        AcrylicMain        = Color3.fromRGB(25, 5, 5),     -- Đỏ đen sâu
-        AcrylicGradient    = ColorSequence.new(Color3.fromRGB(128, 0, 0), Color3.fromRGB(255, 51, 51)),
+        AcrylicMain        = Color3.fromRGB(5, 15, 25), -- nền xanh đen sâu
+        AcrylicGradient    = ColorSequence.new(Color3.fromRGB(0, 64, 128), Color3.fromRGB(0, 178, 255)),
         AcrylicNoise       = 0.85,
 
-        Tab                = Color3.fromRGB(40, 10, 10),  -- Đỏ sẫm
-        Element            = Color3.fromRGB(35, 8, 8),     -- Đỏ đậm
-        ElementBorder      = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        InElementBorder    = Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
+        Tab                = Color3.fromRGB(10, 25, 40),
+        Element            = Color3.fromRGB(8, 20, 35),
+        ElementBorder      = Color3.fromRGB(0, 178, 255),
+        InElementBorder    = Color3.fromRGB(0, 255, 220),
         ElementTransparency= 0.85,
 
-        ToggleSlider       = Color3.fromRGB(160, 80, 80),  -- Đỏ trung bình
-        ToggleToggled      = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        SliderRail         = Color3.fromRGB(204, 0, 0),    -- Đỏ tươi
+        ToggleSlider       = Color3.fromRGB(80, 130, 160),
+        ToggleToggled      = Color3.fromRGB(0, 178, 255),
+        SliderRail         = Color3.fromRGB(0, 102, 204),
 
-        DropdownFrame      = Color3.fromRGB(40, 10, 10),   -- Đỏ sẫm
-        DropdownHolder     = Color3.fromRGB(35, 8, 8),     -- Đỏ đậm
-        DropdownBorder     = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        DropdownOption     = Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
+        DropdownFrame      = Color3.fromRGB(10, 25, 40),
+        DropdownHolder     = Color3.fromRGB(8, 20, 35),
+        DropdownBorder     = Color3.fromRGB(0, 178, 255),
+        DropdownOption     = Color3.fromRGB(0, 255, 220),
 
-        Keybind            = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        Input              = Color3.fromRGB(204, 0, 0),    -- Đỏ tươi
-        InputFocused       = Color3.fromRGB(50, 15, 15),   -- Đỏ sẫm
-        InputIndicator     = Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
+        Keybind            = Color3.fromRGB(0, 178, 255),
+        Input              = Color3.fromRGB(0, 102, 204),
+        InputFocused       = Color3.fromRGB(15, 35, 50),
+        InputIndicator     = Color3.fromRGB(0, 255, 220),
 
-        Dialog             = Color3.fromRGB(40, 10, 10),   -- Đỏ sẫm
-        DialogHolder       = Color3.fromRGB(35, 8, 8),     -- Đỏ đậm
-        DialogHolderLine   = Color3.fromRGB(25, 5, 5),     -- Đỏ đen sâu
-        DialogButton       = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
-        DialogButtonBorder = Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
-        DialogBorder       = Color3.fromRGB(204, 0, 0),    -- Đỏ tươi
-        DialogInput        = Color3.fromRGB(35, 8, 8),     -- Đỏ đậm
-        DialogInputLine    = Color3.fromRGB(255, 51, 51),  -- Đỏ sáng
+        Dialog             = Color3.fromRGB(10, 25, 40),
+        DialogHolder       = Color3.fromRGB(8, 20, 35),
+        DialogHolderLine   = Color3.fromRGB(5, 15, 25),
+        DialogButton       = Color3.fromRGB(0, 178, 255),
+        DialogButtonBorder = Color3.fromRGB(0, 255, 220),
+        DialogBorder       = Color3.fromRGB(0, 102, 204),
+        DialogInput        = Color3.fromRGB(8, 20, 35),
+        DialogInputLine    = Color3.fromRGB(0, 178, 255),
 
-        SubText            = Color3.fromRGB(255, 200, 200),-- Trắng phớt đỏ
-        Hover              = Color3.fromRGB(255, 102, 102),-- Đỏ nhạt
+        SubText            = Color3.fromRGB(200, 240, 255),
+        Hover              = Color3.fromRGB(0, 255, 220),
         HoverChange        = 0.1,
     }
 end

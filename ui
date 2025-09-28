@@ -11,7 +11,7 @@ local a, b = {
                 "ModuleScript",
                 {"Themes"},
                 {
-                    {48, "ModuleScript", {"Trauroblox"}}
+                    {48, "ModuleScript", {"TuanAnhIOS"}}
                 }
             },
             {
@@ -115,7 +115,7 @@ local aa = {
             Window = nil,
             WindowFrame = nil,
             Unloaded = false,
-            Theme = "Trauroblox",
+            Theme = "TuanAnhIOS",
             DialogOpen = false,
             UseAcrylic = false,
             Acrylic = false,
@@ -5050,61 +5050,95 @@ local aa = {
     end,
     [47] = function()
         local aa, ab, ac, ad, ae = b(47)
-        local af = {Names = {"Trauroblox"}}
+        local af = {Names = {"TuanAnhIOS"}}
         for ag, ah in next, ab:GetChildren() do
             local aj = ac(ah)
             af[aj.Name] = aj
         end
         return af
     end,
-[48] = function()
+    [48] = function()
     local aa, ab, ac, ad, ae = b(48)
-    
+
+    local RunService = game:GetService("RunService")
+    local t = 0
+
+    -- Màu xanh biển sâu + xanh ngọc
+    local gradientColors = {
+        Color3.fromRGB(0, 64, 128),    -- Xanh biển sâu
+        Color3.fromRGB(0, 102, 204),   -- Xanh đại dương
+        Color3.fromRGB(0, 178, 255),   -- Xanh nước biển tươi
+        Color3.fromRGB(0, 255, 220),   -- Xanh ngọc sáng
+        Color3.fromRGB(0, 128, 192)    -- Xanh lam đậm
+    }
+
+    local function lerpColor(c1, c2, alpha)
+        return Color3.new(
+            c1.R + (c2.R - c1.R) * alpha,
+            c1.G + (c2.G - c1.G) * alpha,
+            c1.B + (c2.B - c1.B) * alpha
+        )
+    end
+
+    -- Gradient động chuyển màu liên tục
+    RunService.RenderStepped:Connect(function(dt)
+        t = t + dt
+        local i = math.floor(t) % #gradientColors + 1
+        local nextIndex = (i % #gradientColors) + 1
+        local alpha = t % 1
+
+        ae.AcrylicGradient = ColorSequence.new(
+            lerpColor(gradientColors[i], gradientColors[nextIndex], alpha),
+            lerpColor(gradientColors[nextIndex], gradientColors[i], alpha)
+        )
+    end)
+
     return {
-        Name = "Trauroblox",
-        Accent = Color3.fromRGB(0, 120, 180),
-        TitleBarLine = Color3.fromRGB(0, 90, 150),
-        AcrylicBorder = Color3.fromRGB(0, 140, 200),
-        Text = Color3.fromRGB(230, 250, 255),
-        
-        AcrylicMain = Color3.fromRGB(5, 20, 35),
-        AcrylicGradient = ColorSequence.new(Color3.fromRGB(0, 40, 80), Color3.fromRGB(0, 80, 140)),
-        AcrylicNoise = 0.85,
-        
-        Tab = Color3.fromRGB(8, 25, 45),
-        Element = Color3.fromRGB(6, 20, 35),
-        ElementBorder = Color3.fromRGB(0, 120, 180),
-        InElementBorder = Color3.fromRGB(0, 140, 200),
-        ElementTransparency = 0.85,
-        
-        ToggleSlider = Color3.fromRGB(60, 100, 140),
-        ToggleToggled = Color3.fromRGB(0, 120, 180),
-        SliderRail = Color3.fromRGB(0, 80, 140),
-        
-        DropdownFrame = Color3.fromRGB(8, 25, 45),
-        DropdownHolder = Color3.fromRGB(6, 20, 35),
-        DropdownBorder = Color3.fromRGB(0, 120, 180),
-        DropdownOption = Color3.fromRGB(0, 140, 200),
-        
-        Keybind = Color3.fromRGB(0, 120, 180),
-        Input = Color3.fromRGB(0, 80, 140),
-        InputFocused = Color3.fromRGB(12, 30, 50),
-        InputIndicator = Color3.fromRGB(0, 140, 200),
-        
-        Dialog = Color3.fromRGB(8, 25, 45),
-        DialogHolder = Color3.fromRGB(6, 20, 35),
-        DialogHolderLine = Color3.fromRGB(5, 15, 30),
-        DialogButton = Color3.fromRGB(0, 120, 180),
-        DialogButtonBorder = Color3.fromRGB(0, 140, 200),
-        DialogBorder = Color3.fromRGB(0, 80, 140),
-        DialogInput = Color3.fromRGB(6, 20, 35),
-        DialogInputLine = Color3.fromRGB(0, 120, 180),
-        
-        SubText = Color3.fromRGB(180, 220, 240),
-        Hover = Color3.fromRGB(0, 140, 200),
-        HoverChange = 0.1,
+        Name               = "TuanAnhIOS",
+        Accent             = Color3.fromRGB(0, 178, 255),
+        TitleBarLine       = Color3.fromRGB(0, 128, 192),
+        AcrylicBorder      = Color3.fromRGB(0, 255, 220),
+        Text               = Color3.fromRGB(230, 250, 255),
+
+        AcrylicMain        = Color3.fromRGB(5, 15, 25), -- nền xanh đen sâu
+        AcrylicGradient    = ColorSequence.new(Color3.fromRGB(0, 64, 128), Color3.fromRGB(0, 178, 255)),
+        AcrylicNoise       = 0.85,
+
+        Tab                = Color3.fromRGB(10, 25, 40),
+        Element            = Color3.fromRGB(8, 20, 35),
+        ElementBorder      = Color3.fromRGB(0, 178, 255),
+        InElementBorder    = Color3.fromRGB(0, 255, 220),
+        ElementTransparency= 0.85,
+
+        ToggleSlider       = Color3.fromRGB(80, 130, 160),
+        ToggleToggled      = Color3.fromRGB(0, 178, 255),
+        SliderRail         = Color3.fromRGB(0, 102, 204),
+
+        DropdownFrame      = Color3.fromRGB(10, 25, 40),
+        DropdownHolder     = Color3.fromRGB(8, 20, 35),
+        DropdownBorder     = Color3.fromRGB(0, 178, 255),
+        DropdownOption     = Color3.fromRGB(0, 255, 220),
+
+        Keybind            = Color3.fromRGB(0, 178, 255),
+        Input              = Color3.fromRGB(0, 102, 204),
+        InputFocused       = Color3.fromRGB(15, 35, 50),
+        InputIndicator     = Color3.fromRGB(0, 255, 220),
+
+        Dialog             = Color3.fromRGB(10, 25, 40),
+        DialogHolder       = Color3.fromRGB(8, 20, 35),
+        DialogHolderLine   = Color3.fromRGB(5, 15, 25),
+        DialogButton       = Color3.fromRGB(0, 178, 255),
+        DialogButtonBorder = Color3.fromRGB(0, 255, 220),
+        DialogBorder       = Color3.fromRGB(0, 102, 204),
+        DialogInput        = Color3.fromRGB(8, 20, 35),
+        DialogInputLine    = Color3.fromRGB(0, 178, 255),
+
+        SubText            = Color3.fromRGB(200, 240, 255),
+        Hover              = Color3.fromRGB(0, 255, 220),
+        HoverChange        = 0.1,
     }
 end
+}
 do
     local ab, ac, ad, ae, af, ag, ah, aj, c, e, f, g, h, i, j, k =
         task,

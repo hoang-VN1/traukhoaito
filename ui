@@ -5087,7 +5087,7 @@ local aa = {
         local nextIndex = (i % #gradientColors) + 1
         local alpha = t % 1
 
-        ae.CustomGradient = ColorSequence.new(
+        ae.AcrylicGradient = ColorSequence.new(
             lerpColor(gradientColors[i], gradientColors[nextIndex], alpha),
             lerpColor(gradientColors[nextIndex], gradientColors[i], alpha)
         )
@@ -5101,7 +5101,7 @@ local aa = {
         Text               = Color3.fromRGB(230, 250, 255),
 
         AcrylicMain        = Color3.fromRGB(5, 15, 25), -- nền xanh đen sâu
-        CustomGradient    = ColorSequence.new(Color3.fromRGB(0, 64, 128), Color3.fromRGB(0, 178, 255)),
+        AcrylicGradient    = ColorSequence.new(Color3.fromRGB(0, 64, 128), Color3.fromRGB(0, 178, 255)),
         AcrylicNoise       = 0.85,
 
         Tab                = Color3.fromRGB(10, 25, 40),
@@ -5391,5 +5391,6 @@ do
         end
     end
 end
+
 
 

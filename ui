@@ -5101,7 +5101,7 @@ local aa = {
         Text               = Color3.fromRGB(230, 250, 255),
 
         AcrylicMain        = Color3.fromRGB(5, 15, 25), -- nền xanh đen sâu
-        AcrylicGradient    = ColorSequence.new(Color3.fromRGB(0, 64, 128), Color3.fromRGB(0, 178, 255)),
+        CustomGradient    = ColorSequence.new(Color3.fromRGB(0, 64, 128), Color3.fromRGB(0, 178, 255)),
         AcrylicNoise       = 0.85,
 
         Tab                = Color3.fromRGB(10, 25, 40),
@@ -5391,3 +5391,4 @@ do
         end
     end
 end
+

@@ -5087,7 +5087,7 @@ local aa = {
         local nextIndex = (i % #gradientColors) + 1
         local alpha = t % 1
 
-        ae.AcrylicGradient = ColorSequence.new(
+        ae.CustomGradient = ColorSequence.new(
             lerpColor(gradientColors[i], gradientColors[nextIndex], alpha),
             lerpColor(gradientColors[nextIndex], gradientColors[i], alpha)
         )
@@ -5391,4 +5391,5 @@ do
         end
     end
 end
+
 

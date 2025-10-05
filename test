@@ -1,18 +1,3 @@
---[[ 
-  ███████╗███╗   ██╗ ██████╗██████╗ ██╗   ██╗██████╗ ████████╗███████╗██████╗ 
-  ██╔════╝████╗  ██║██╔════╝██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
-  █████╗  ██╔██╗ ██║██║     ██████╔╝ ╚████╔╝ ██████╔╝   ██║   █████╗  ██║  ██║
-  ██╔══╝  ██║╚██╗██║██║     ██╔══██╗  ╚██╔╝  ██╔═══╝    ██║   ██╔══╝  ██║  ██║
-  ███████╗██║ ╚████║╚██████╗██║  ██║   ██║   ██║        ██║   ███████╗██████╔╝
-  ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚══════╝╚═════╝ 
-  
-  Protected by Advanced Obfuscation Engine
-  Level: MEDIUM
-  Timestamp: 1759679806143
-  Security: Military Grade
-  DO NOT ATTEMPT TO DEOBFUSCATE - PROTECTED BY ANTI-TAMPER
-]]--
-
 local lIGPIXFlIuMUK_ = 0; for l_11mXIx11KR01OI=1,1000000 do __h11q0TgSOwOIhI = lI10OcSEIL0OIst + 1 end
 do
 	IllslCX10IJNIN1OIO = game.l_JlGI0mk1I0zm

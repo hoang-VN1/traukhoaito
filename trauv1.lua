@@ -1,8 +1,3 @@
---discord.gg/boronide, code generated using luamin.js™
-
-
-
-
 ([[This file was protected with MoonSec V3]]):gsub('.+', (function(a)
 	_jEpSsAIdPnFT = a;
 end));
